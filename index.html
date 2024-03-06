@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 70%, 44%); }
+
+ body{
+  background-color: hsl(0, 0%, 94%);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400i, 700, 800i;
+
+
+ }
+
+
+ .container {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50rem;
+      
+    }
+ .panel{
+  background-color: hsl(0, 0%, 100%);
+      width: 35rem;
+      height: auto;
+      border-radius: 3%;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-bottom-right-radius: 20%;
+
+ }
+ 
+ .input-field {
+  font-weight: 600;
+  height: 3rem;
+  width: 6rem;
+  border-radius: 5%;
+  color: hsl(0, 0%, 8%);
+  font-size: 2rem;
+  text-align: left;
+  padding-left: 10px;
+  margin: auto;
+  border: 1px solid hsl(0, 0%, 86%);
+  
+}
+
+.input-field:focus {
+  outline: 0.1px solid hsl(259, 100%, 65%);
+  
+}
+
+.input-field:hover {
+  border-color: hsl(259, 100%, 65%);
+  
+}
+
+
+.input-field::placeholder {
+  color: hsl(0, 1%, 44%);
+  font-size: 1.8rem;
+
+  
+}
+
+hr {
+  border: none;
+  border-top: 2px solid hsl(0, 0%, 86%);
+  margin-left: 2rem ;
+}
+
+.gora
+{
+  width:30rem;
+  height: 7rem;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.glewy
+{
+  width: 8.5em;
+  float: left;
+  color:hsl(0, 1%, 44%);
+}
+.gprawy
+{
+  width: 8.5em;
+  float: left;
+  color:hsl(0, 1%, 44%);
+
+}
+.ggprawy
+{
+  width: 8.5em;
+  float: left;
+  color:hsl(0, 1%, 44%);
+
+}
+
+.slewy
+{width:30em;
+  float:left;}
+  .sprawy{float: left;
+    flex-grow: 1; 
+    text-align: center;
+button{ 
+  border-radius: 100%;
+  background-color: hsl(259, 100%, 65%);
+  border: 1px hsl(259, 100%, 65%);
+  box-shadow: 20px;
+  width: 5rem; 
+  height: 5rem;
+  
+}button:hover{ 
+  background-color: hsl(0, 0%, 8%);
+  border-color: hsl(0, 0%, 8%);
+}
+
+img{margin:0.5rem;}
+  }
+  .dol
+  {
+    margin-left: 2rem;
+    flex-direction: row;
+    width:30em;
+    
+  }
+
+.age-info::after {
+    color: black;
+    font-size: 4rem;
+    font-weight: bolder;
+    font-style: italic;
+}
+.age-info::after {
+  content: " years";
+}
+.age-info.months::after{content: " months";}
+.age-info.days::after{content: " days";}
+
+
+.przycisk {
+  border-radius: 100%;
+  background-color: hsl(259, 100%, 65%);
+  border-color: hsl(259, 100%, 65%);
+  box-shadow: 20px;
+  width: 5rem; 
+  height: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-40%);
+}
+.purple
+{
+  margin: 0; 
+  padding: 0;
+  color: hsl(259, 100%, 65%);
+  font-size: 4rem;
+  font-style: italic;
+    
+}
+.italic {
+  font-style: italic;
+}
+.age-info {
+    color: hsl(259, 100%, 65%);
+    font-size: 4rem;
+    font-weight: bolder;
+    margin: 0; 
+    padding: 0;
+    font-style: italic;
+}
+.day-error{color:red;}
+.month-error{color:red;}
+.year-error{color:red;}
+i{font-size: 1.8rem; font-style: italic;} 
+@media only screen and (max-width: 468px) {         /*Pierwszy raz robiłem strone z dostosowaniem na rozne urządzenia*/
+  .dol
+  {
+    margin-left: 1rem;
+    flex-direction: row;
+    width:30em;
+    
+  }
+  .input-field {
+
+    
+  height: 2.8rem;
+  width: 5.5rem; 
+  font-size: 1.5rem;
+  padding-left: 6px;
+  padding-right: 6px;
+  align-items: center;
+  
+}
+.input-field::placeholder {
+
+  font-size: 1.5rem;}
+  hr {
+ 
+
+  margin-left: 0.1rem ;
+}
+  button{ 
+
+  box-shadow: 20px;
+  width: 2rem; 
+  height: 2rem;
+  }
+
+  .panel {
+    max-width: 100%; 
+    border-radius: 1.3rem; 
+    border-bottom-right-radius: 5rem;
+    margin-left:5rem;
+    position: relative;
+  top: 20%;
+  transform: translateY(-40%);
+    
+  }
+
+  .gora {
+    flex-direction:row; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-left: 0; 
+    gap: 1px;
+    
+  }
+
+  .glewy, .gprawy, .ggprawy {
+    width: calc((100% / 3) - 2.5rem);
+
+    margin-bottom: 10px; 
+    font-size: 1rem; 
+    height: 2.5rem;
+  }
+
+  .slewy, .sprawy {
+    width: 100%; 
+    margin-top: 10px; 
+  }
+
+  .dol {
+    width: 100%; 
+  }
+
+  .przycisk {
+    width: 100%; 
+    font-size: 1.5rem; 
+    height: 3rem; 
+
+    position: relative;
+
+    transform: translateY(-70%);
+  }
+
+.age-info {
+   
+    font-size: 3rem;
+    font-weight: bolder;
+
+}
+.age-info::after {
+    color: black;
+    font-size: 3rem;
+    font-weight: bolder;
+    font-style: italic;
+}
+.purple
+{
+  font-size:3rem;
+}}
+@media only screen and (max-width: 359px) 
+{
+  .dol
+  {
+    margin-left: 1rem;
+    flex-direction: row;
+    width:30em;
+    
+  }
+  .input-field {
+
+    
+  height: 2.1rem;
+  width: 3.5rem; 
+  font-size: 1rem;
+  padding-left: 6px;
+  padding-right: 6px;
+  align-items: center;
+  
+}
+.input-field::placeholder {
+
+  font-size: 1rem;}
+  hr {
+ 
+
+  margin-left: 0.1rem ;
+}
+  button{ 
+
+  box-shadow: 20px;
+  width: 2rem; 
+  height: 2rem;
+  }
+
+  .panel {
+    max-width: 100%; 
+    border-radius: 1.3rem; 
+    border-bottom-right-radius: 5rem;
+    margin-left:5rem;
+    position: relative;
+  top: 20%;
+  transform: translateY(-40%);
+    
+  }
+
+  .gora {
+    flex-direction:row; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-left: 0; 
+    gap: 1px;
+    
+  }
+
+  .glewy, .gprawy, .ggprawy {
+    width: calc((100% / 3) - 4rem);
+
+    margin-bottom: 10px; 
+    font-size: 0.8rem; 
+    height: 2.5rem;
+  }
+
+  .slewy, .sprawy {
+    width: 100%; 
+    margin-top: 10px; 
+  }
+
+  .dol {
+    width: 100%; 
+  }
+
+  .przycisk {
+    width: 100%; 
+    font-size: 1.5rem; 
+    height: 3rem; 
+
+    position: relative;
+
+    transform: translateY(-70%);
+  }
+
+  
+}
+@media only screen and (max-width: 300px) 
+{
+  .age-info {
+  font-size: 2.5rem;
+
+}
+.age-info::after {
+
+  font-size: 2.5rem;
+
+}
+.purple
+{
+  font-size:2.5rem;
+}
+
+}
+@media only screen and (min-width:469px)and (max-width: 615px) {
+  .przycisk {
+    height: 21rem; 
+    position:relative;
+    transform: translateY(-60%);
+  }
+
+
+}
+ </style>
+</head>
+<body>
+  <div class="container">
+    <div class="panel">
+      <div class="gora">
+        <div class="glewy">
+        <b> DAY</b>
+          <br>
+          <input type="text"class="input-field" id="dzien" placeholder="DD" maxlength="2">
+          <div class="day-error"></div>
+        </div>
+        <div class="gprawy">
+        <b> MONTH</b>
+          <br>
+          <input type="text"class="input-field" id="miesiac" placeholder="MM" maxlength="2">
+          <div class="month-error"></div>
+        </div><div class = "ggprawy">
+        <b>YEAR</b>
+        <br>
+        <input type="text" id="rok"class="input-field"   placeholder="YYYY" maxlength="4">
+        <div class="year-error"></div>
+      </div></div>
+      <div class="slewy">
+        <hr>
+      </div>
+      <div class="sprawy">
+        <button class="przycisk" onclick="licz()">
+          <img src="assets/images/icon-arrow.svg" alt="Przycisk z obrazkiem">
+        </button>
+      </div>
+      <div class="dol">
+        <p class="age-info years"><i class="purple">- - </i></p>
+
+        <p class="age-info months"><i class="purple">- - </i></p>
+        <p class="age-info days"><i class="purple">- - </i></p>
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    function licz() {
+    var dzien = parseInt(document.getElementById("dzien").value);
+    var miesiac = parseInt(document.getElementById("miesiac").value);
+    var rok = document.getElementById("rok").value;
+
+    var anyError = false; 
+
+    if (!/^\d+$/.test(rok) || rok > new Date().getFullYear()) {
+        document.getElementsByClassName("year-error")[0].textContent = rok > new Date().getFullYear() ? "Must be in the past" : "Invalid year";
+        document.getElementById("rok").style.borderColor = "red";
+        document.querySelector(".ggprawy").style.color = "red";
+        anyError = true;
+    } else {
+        document.getElementsByClassName("year-error")[0].textContent = "";
+        document.getElementById("rok").style.borderColor = "";
+        document.querySelector(".ggprawy").style.color = "";
+    }
+
+    var date = new Date(rok, miesiac - 1, dzien);
+    if (
+        anyError ||
+        date.getDate() !== dzien ||
+        dzien > new Date(rok, miesiac, 0).getDate() ||
+        miesiac > 12
+    ) {
+        anyError = true;
+        if (date > new Date()) {
+            document.getElementsByClassName("year-error")[0].textContent = "Must be in the past";
+        }
+        if (dzien > new Date(rok, miesiac, 0).getDate()) {
+            document.getElementsByClassName("day-error")[0].textContent = "Must be a valid day";
+        } else {
+            document.getElementsByClassName("day-error")[0].textContent = ""; 
+        }
+        if (miesiac > 12) {
+            document.getElementsByClassName("month-error")[0].textContent = "Must be a valid month";
+        } else {
+            document.getElementsByClassName("month-error")[0].textContent = ""; 
+        }
+        document.getElementById("rok").style.borderColor = "red";
+        document.querySelector(".ggprawy").style.color = "red";
+        document.getElementById("dzien").style.borderColor = "red";
+        document.querySelector(".glewy").style.color = "red";
+        document.getElementById("miesiac").style.borderColor = "red";
+        document.querySelector(".gprawy").style.color = "red";
+    } else {
+        document.getElementsByClassName("day-error")[0].textContent = "";
+        document.getElementsByClassName("month-error")[0].textContent = "";
+        document.getElementsByClassName("year-error")[0].textContent = "";
+        document.getElementById("rok").style.borderColor = "";
+        document.querySelector(".ggprawy").style.color = "";
+        document.getElementById("dzien").style.borderColor = "";
+        document.querySelector(".glewy").style.color = "";
+        document.getElementById("miesiac").style.borderColor = "";
+        document.querySelector(".gprawy").style.color = "";
+
+        var currentDate = new Date();
+        var DataUr = new Date(rok, miesiac - 1, dzien);
+        var ageInMilliseconds = currentDate - DataUr;
+        var DataRok = currentDate.getFullYear() - DataUr.getFullYear();
+        var DataMies = currentDate.getMonth() - DataUr.getMonth();
+        var DataDzien = currentDate.getDate() - DataUr.getDate();
+
+        if (DataMies < 0 || (DataMies === 0 && currentDate.getDate() < DataUr.getDate())) {
+            DataRok--;
+            DataMies += 12;
+        }
+        if (DataDzien < 0) {
+            DataMies--;
+            var daysInLastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+            DataDzien += daysInLastMonth;
+        }
+
+        document.getElementsByClassName("years")[0].innerHTML = '<i class="purple">' + DataRok + '</i>';
+        document.getElementsByClassName("months")[0].innerHTML = '<i class="purple">' + DataMies + '</i>';
+        document.getElementsByClassName("days")[0].innerHTML = '<i class="purple">' + DataDzien + '</i>';
+    }
+}
+
+
+  </script>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Mati</a>.
+  </div>
+</body>
+</html>
